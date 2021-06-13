@@ -1,6 +1,7 @@
 echo "start server"
 whoami
-
+pwd
+ls
 cd /application
 
 export NVM_DIR="$HOME/.nvm"
