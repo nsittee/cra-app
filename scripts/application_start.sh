@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash
 echo "start server"
 whoami
 
@@ -10,6 +10,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export PORT=8080
+/home/ec2-user/.nvm/versions/node/v12.19.0/bin/npm install
+/home/ec2-user/.nvm/versions/node/v12.19.0/bin/npm install pm2 -g
 
 /home/ec2-user/.nvm/versions/node/v12.19.0/bin/pm2 start npm --name "cra-app" -- start
 /home/ec2-user/.nvm/versions/node/v12.19.0/bin/pm2 startup

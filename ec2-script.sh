@@ -1,5 +1,7 @@
 #!/bin/bash -xe
 
+export MA_NODEVERSION=12.19.0
+
 ## Code Deploy Agent Bootstrap Script##
 
 exec > >(tee /var/log/user-data.log | logger -t user-data -s 2>/dev/console) 2>&1
@@ -75,8 +77,11 @@ function execute() {
 function node() {
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
   export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  nvm install 12.19.0
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+  nvm install $MA_NODEVERSION
+  npm install pm2 -g
 }
 
 platformize
@@ -84,3 +89,5 @@ installdep
 REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r ".region")
 execute
 node
+
+ls /home/ec2-user/.nvm/versions/node/v$MA_NODEVERSION/bin/
