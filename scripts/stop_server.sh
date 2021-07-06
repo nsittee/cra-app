@@ -1,3 +1,4 @@
+#!/bin/bash -xe
 echo "stop server"
 
 echo "check pm2 command"

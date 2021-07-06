@@ -1,3 +1,4 @@
+#!/bin/bash -xe
 echo "start server"
 whoami
 
