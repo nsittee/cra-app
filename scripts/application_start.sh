@@ -1,7 +1,5 @@
 echo "start server"
 whoami
-pwd
-ls
 
 cd /application
 ls
