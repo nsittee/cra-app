@@ -1,7 +1,3 @@
 echo "stop server"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-pm2 stop cra-app
+/home/ec2-user/.nvm/versions/node/v12.19.0/bin/pm2 stop cra-app

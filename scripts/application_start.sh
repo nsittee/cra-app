@@ -10,7 +10,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PORT=8080
 
-pm2 start npm --name "cra-app" -- start
-pm2 startup
-pm2 save
-pm2 restart all
+/home/ec2-user/.nvm/versions/node/v12.19.0/bin/pm2 start npm --name "cra-app" -- start
+/home/ec2-user/.nvm/versions/node/v12.19.0/bin/pm2 startup
+/home/ec2-user/.nvm/versions/node/v12.19.0/bin/pm2 save
+/home/ec2-user/.nvm/versions/node/v12.19.0/bin/pm2 restart all
