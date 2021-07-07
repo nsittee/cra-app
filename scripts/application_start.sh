@@ -13,6 +13,4 @@ export PORT=8080
 
 npm install
 pm2 start npm --name "cra-app" -- start
-pm2 startup
 pm2 save
-pm2 restart all
