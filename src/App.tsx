@@ -13,10 +13,10 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <p>
-          {env.PORT} -- {env.RANDOM_ENV}
+          Click <code>{env.PUBLIC_URL}</code>
         </p>
         <p>
-          Click <code>{env.EC2_CONTEXT}</code>
+          Name: {env.REACT_APP_NAME} -- Age:{env.REACT_APP_NUMBER}
         </p>
         <a
           className="App-link"
