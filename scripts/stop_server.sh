@@ -4,3 +4,5 @@ echo "stop server"
 
 pm2 stop cra-app
 pm2 delete cra-app
+
+echo "stop"
