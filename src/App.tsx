@@ -13,7 +13,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <p>
-          Click <code>{env.PUBLIC_URL}</code>
+          <code>Environment {env.NODE_ENV} at {env.PUBLIC_URL}</code>
         </p>
         <p>
           Name: {env.REACT_APP_NAME} -- Age:{env.REACT_APP_NUMBER}
