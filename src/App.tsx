@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const env = process.env;
+
 function App() {
   return (
     <div className="App">
@@ -11,7 +13,10 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <p>
-          Click <code>{process.env.EC2_CONTEXT}</code>
+          {env.PORT} -- {env.RANDOM_ENV}
+        </p>
+        <p>
+          Click <code>{env.EC2_CONTEXT}</code>
         </p>
         <a
           className="App-link"
