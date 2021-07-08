@@ -2,14 +2,9 @@
 source /home/ec2-user/.bash_profile
 echo "start server"
 
-cd /application
-ls
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
+export PROTOCOL=http
 export PORT=8080
+export EC2_CONTEXT=$PROTOCOL://ec2-13-213-47-102.ap-southeast-1.compute.amazonaws.com:$PORT
 
 npm install
 pm2 start npm --name "cra-app" -- start
